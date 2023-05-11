@@ -22,7 +22,7 @@ def ups_apc_read_data():
 			# Le paramètre est un date et heure, on l'interprête comme tel
 			valeur_paramètre = dt.strptime(valeur_paramètre, "%Y-%m-%d %H:%M:%S %z")
 		elif nom_paramètre in ('LINEV', 'LOADPCT', 'BCHARGE', 'TIMELEFT', 'MBATTCHG', 'MINTIMEL','MAXTIME','OUTPUTV','DWAKE','DSHUTD','LOTRANS',
-			'HITRANS','RETPCT','ITEMP','ALARMDEL','BATTV','LINEFREQ','NUMXFERS','TONBATT','CUMONBATT','STESTI','NOMOUTV','NOMBATTV',):
+			'HITRANS','RETPCT','ITEMP','ALARMDEL','BATTV','LINEFREQ','TONBATT','CUMONBATT','STESTI','NOMOUTV','NOMBATTV',):
 			# Le paramètre est une valeur numérique suivie de son unité, on l'interprête comme tel
 			valeurs = valeur_paramètre.split(" ")
 			unité = valeurs[1]
