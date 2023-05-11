@@ -1,1 +1,1 @@
-# apc_ups_lib
+# Récupération des données d'un ups APC en usb
