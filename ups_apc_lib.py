@@ -26,6 +26,17 @@ def ups_apc_read_data():
 			# Le paramètre est une valeur numérique suivie de son unité, on l'interprête comme tel
 			valeurs = valeur_paramètre.split(" ")
 			unité = valeurs[1]
+			if unité == "Percent":
+				unité_courte = "%"
+			elif unité == "Minutes":
+				unité_courte = "Min"
+			elif unité == "C":
+				unité_courte = "°C"
+			elif unité == "Volts":
+				unité_courte = "V"
+			else:
+				unité_courte = unité
+
 			valeur_paramètre = float(valeurs[0])
 
 		if nom_paramètre == 'STATUS':
@@ -45,6 +56,7 @@ def ups_apc_read_data():
 		elif nom_paramètre == "LINEFREQ":
 			friendly_name = "Fréquence secteur"
 
-		ups_data[nom_paramètre] = {"valeur": valeur_paramètre, "unité": unité, "friendly_name": friendly_name}
+		ups_data[nom_paramètre] = {"valeur": valeur_paramètre, "unité": unité, "unité_courte": unité_courte, 
+			"friendly_name": friendly_name}
 
 	return ups_data
