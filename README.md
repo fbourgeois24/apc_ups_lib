@@ -98,8 +98,9 @@ ups_data = ups_apc_lib.ups_apc_read_data()
 ```
 La fonction renvoie un dictionnaire avec les informations listées plus haut au format suivant:
 ```python
-"nom_paramètre": {"valeur": valeur, "unité": unité} 
+"nom_paramètre": {"valeur": valeur, "unité": unité, "friendly_name": friendly_name} 
 # La clé unité est toujours présente et = "" si pas d'unité
 ```
 Les valeurs date et heure sont au format datetime.datetime
 Les valeurs numériques sont au format float
+friendly_name est le nom "amical" exemple, pour le paramètre "BCHARGE", friendly_name = "Charge batterie"

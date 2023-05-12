@@ -28,6 +28,23 @@ def ups_apc_read_data():
 			unité = valeurs[1]
 			valeur_paramètre = float(valeurs[0])
 
-		ups_data[nom_paramètre] = {"valeur": valeur_paramètre, "unité": unité}
+		if nom_paramètre == 'STATUS':
+			friendly_name = "Statut"
+		elif nom_paramètre == "LINEV":
+			friendly_name = "Tension secteur"
+		elif nom_paramètre == "LOADPCT":
+			friendly_name = "Charge d'utilisation"
+		elif nom_paramètre == "BCHARGE":
+			friendly_name = "Charge batteries"
+		elif nom_paramètre == "TIMELEFT":
+			friendly_name = "Autonomie restante"
+		elif nom_paramètre == "OUTPUTV":
+			friendly_name = "Tension de sortie"
+		elif nom_paramètre == "ITEMP":
+			friendly_name = "Température"
+		elif nom_paramètre == "LINEFREQ":
+			friendly_name = "Fréquence secteur"
+
+		ups_data[nom_paramètre] = {"valeur": valeur_paramètre, "unité": unité, "friendly_name": friendly_name}
 
 	return ups_data
