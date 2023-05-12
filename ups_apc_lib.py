@@ -45,6 +45,8 @@ def ups_apc_read_data():
 			friendly_name = "Température"
 		elif nom_paramètre == "LINEFREQ":
 			friendly_name = "Fréquence secteur"
+		else:
+			friendly_name = ""
 
 		# Ajout unité courte
 		if unité == "Percent":
